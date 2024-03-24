@@ -1,6 +1,3 @@
-"""
-asdasd
-"""
-
+"My doc"
 
 print("Hi")
