@@ -1,1 +1,4 @@
 pre-commit
+pylint
+autopep8
+yamllint

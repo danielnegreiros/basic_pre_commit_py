@@ -1,27 +1,26 @@
+---
 repos:
-# - repo: https://github.com/pre-commit/pre-commit-hooks
-#   rev: v4.5.0
-#   hooks:
-#   - id: check-yaml
-#   - id: end-of-file-fixer
-#   - id: trailing-whitespace
-# - repo: https://github.com/hhatto/autopep8
-#   rev: v2.0.4
-#   hooks:
-#   - id: autopep8
-- repo: local
-  hooks:
-  - id: pylint
-    name: pylint
-    entry: ./.venv/bin/pylint
-    language: system
-    types: [python]
-    args: [--ignore-patterns=./.venv]
-    exclude: '^\.venv/'
-  - id: autopep8
-    name: autopep8
-    entry: ./.venv/bin/autopep8
-    language: system
-    types: [python]
-    args: [--aggressive, --aggressive, --in-place]
-    exclude: '^\.venv/'
+  - repo: local
+    hooks:
+
+      - id: pylint
+        name: pylint
+        entry: ./.venv/bin/pylint
+        language: system
+        types: [python]
+        exclude: '^\.venv/'
+
+      - id: autopep8
+        name: autopep8
+        entry: ./.venv/bin/autopep8
+        language: system
+        types: [python]
+        args: [--aggressive, --aggressive, --in-place]
+        exclude: '^\.venv/'
+
+      - id: yamllint
+        name: yamllint
+        entry: ./.venv/bin/yamllint
+        language: system
+        types: [yaml]
+        exclude: '^\.venv/'
